@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - İbrahim Bakır</title>
+    
+    <link rel="stylesheet" href="style.css">
+
+    <!-- LEAFLET KÜTÜPHANESİ -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <!-- OPENLAYERS KÜTÜPHANESİ -->
+    <script src="https://cdn.jsdelivr.net/npm/ol@v8.2.0/dist/ol.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@v8.2.0/ol.css">
+</head>
+<body>
+
+    <!-- Particles Kütüphanesi ve Kutusu -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <!-- Ana Sayfaya Geri Dönüş Butonu -->
+    <a href="index.html" class="back-btn">← BACK TO HOME</a>
+
+    <div class="projects-container">
+        
+        <div class="welcome-title" style="text-align: center; margin-bottom: 20px;">
+            <h1>CONTACT ME</h1>
+            <p>WHERE TO FIND ME</p>
+        </div>
+
+        <!-- İletişim Bilgilerin -->
+        <div style="text-align: center; font-size: 24px; margin-bottom: 40px; color: #000000; font-family: sans-serif; font-weight: bold; line-height: 1.6;">
+            <p style="margin: 10px 0;">📍 Ankara, Türkiye</p>
+            
+            <p style="margin: 10px 0;">
+                 <a href="mailto:ibrahimbkr10@gmail.com" style="color: #000000; text-decoration: none; border-bottom: 3px solid #FFD700;">ibrahimbkr10@gmail.com</a>
+            </p>
+            
+            <p style="margin: 10px 0;">
+                 <a href="https://www.linkedin.com/in/ibrahim-bakir0" target="_blank" style="color: #000000; text-decoration: none; border-bottom: 3px solid #FFD700;">LinkedIn Profilim</a>
+            </p>
+            
+            <p style="margin: 10px 0;">
+                 <a href="https://github.com/ibrahimbkr0" target="_blank" style="color: #000000; text-decoration: none; border-bottom: 3px solid #FFD700;">GitHub: ibrahimbkr0</a>
+            </p>
+        </div>
+        
+        <div class="maps-wrapper">
+            <!-- 1. Harita Kutusu: Leaflet (Hacettepe Geomatik) -->
+            <div class="map-box">
+                <h2>UNIVERSITY (LEAFLET)</h2>
+                <div id="leaflet-map" class="map-content"></div>
+                <p class="issue-note"></p>
+            </div>
+
+            <!-- 2. Harita Kutusu: OpenLayers (Kurtuluş Metro) -->
+            <div class="map-box">
+                <h2>LOCATION (OPENLAYERS)</h2>
+                <div id="ol-map" class="map-content"></div>
+                <p class="issue-note"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Harita kodlarımızın çalışacağı JS dosyasını çağırıyoruz -->
+    <script src="maps.js"></script>
+
+    <!-- Particles Konfigürasyonu -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 }, 
+                "color": { "value": "#D4F1F4"}, 
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4 },
+                "size": { "value": 5 }, 
+                "line_linked": {
+                    "enable": true, "distance": 170, "color": "#000000", "opacity": 0.3, "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, 
+                    "onclick": { "enable": true, "mode": "push" } 
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

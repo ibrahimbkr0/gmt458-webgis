@@ -1,5 +1,9 @@
-/* --- GENEL AYARLAR --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+/* --- YAĞ GİBİ KAYMA SİHRİ --- */
+html {
+    scroll-behavior: smooth;
+}
 
 body {
     margin: 0;
@@ -47,8 +51,9 @@ body {
 .welcome-title p {
     font-size: 24px;
     margin: 5px 0 0 0;
-    color: #216fcf; /* Buton yazılarındaki mavi tonunu alt başlıkta da kullandık */
+    color: #000000; /* Rengi mavi yerine simsiyah yaptık */
     letter-spacing: 4px;
+    font-weight: bold; /* Siyah yaparken biraz da kalınlaştırdım ki iyice belirgin olsun (istersen silebilirsin) */
 }
 
 /* --- KESKİN KUTU TASARIMI (BOYU VE İÇİ KÜÇÜLTÜLDÜ) --- */
@@ -106,11 +111,96 @@ body {
 }
 
 /* --- HAREKETLİ ARKA PLAN (PARTICLES) --- */
+/* --- HAREKETLİ ARKA PLAN (PARTICLES) --- */
 #particles-js {
-    position: absolute;
+    position: fixed; /* 'absolute' yerine 'fixed' yaptık, böylece aşağı inince kaybolmayacak */
     width: 100%;
     height: 100%;
     top: 0;
     left: 0;
     z-index: -1; 
+}
+/* =========================================
+   PROJECTS (HARİTALAR) SAYFASI ÖZEL TASARIMI
+   ========================================= */
+
+.back-btn {
+    position: absolute;
+    top: 30px;
+    left: 40px;
+    text-decoration: none;
+    color: #000000;
+    font-size: 28px;
+    font-weight: 900;
+    background-color: #FFD700;
+    padding: 10px 20px;
+    border: 4px solid #000000;
+    box-shadow: 8px 8px 0px rgba(0,0,0,1);
+    transition: all 0.3s ease;
+}
+.back-btn:hover {
+    background-color: #000000;
+    color: #FFD700;
+    transform: translate(-3px, -3px);
+    box-shadow: 12px 12px 0px rgba(0,0,0,1);
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 80px;
+    min-height: 100vh;
+}
+
+.maps-wrapper {
+    display: flex;
+    gap: 50px;
+    width: 90%;
+    max-width: 1400px;
+    justify-content: center;
+}
+
+.map-box {
+    flex: 1; 
+    background-color: #000000;
+    border: 5px solid #FFD700;
+    padding: 20px;
+    box-shadow: 20px 20px 0px rgba(0,0,0,0.8);
+}
+
+.map-box h2 {
+    color: #FFD700;
+    margin-top: 0;
+    font-size: 36px;
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.map-content {
+    width: 100%;
+    height: 450px; 
+    background-color: #222; 
+    border: 2px solid #FFFFFF;
+}
+
+.issue-note {
+    color: #FFFFFF;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 15px;
+    font-family: sans-serif; /* Okunabilir olması için klasik font */
+}
+/* --- AŞAĞIDAKİ BÖLÜMLERİN (SECTIONS) TASARIMI VE BOŞLUKLARI --- */
+/* --- AŞAĞIDAKİ BÖLÜMLERİN TASARIMI VE BOŞLUKLARI --- */
+.content-section {
+    min-height: 100vh; /* Her bölümün en az 1 ekran boyunda olmasını sağlar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    /* Bölümler arası boşluk ve düzen */
+    margin-bottom: 150px; 
+    padding-top: 80px; 
 }

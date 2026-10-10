@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experience - İbrahim Bakır</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particles Kütüphanesi ve Kutusu -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <div id="particles-js"></div>
+
+    <!-- Ana Sayfaya Geri Dönüş Butonu -->
+    <a href="index.html" class="back-btn">← BACK TO HOME</a>
+
+    <div class="projects-container">
+        
+        <div class="welcome-title" style="text-align: center; margin-bottom: 50px;">
+            <h1>EXPERIENCE</h1>
+            <p>MY PROFESSIONAL JOURNEY</p>
+        </div>
+        
+        <!-- Deneyimlerin Yazılı Olduğu Sarı Kutu -->
+        <div style="width: 80%; max-width: 1000px; color: #000; font-size: 20px; background: #FFD700; padding: 40px; border: 5px solid #000; box-shadow: 15px 15px 0px rgba(0,0,0,1); text-align: left;">
+            
+            <h2 style="margin-top: 0; color: #216fcf; font-size: 32px; letter-spacing: 1px;"> Basarsoft</h2>
+            <p style="font-weight: bold; font-size: 24px; margin-bottom: 10px;">GIS & Data Intern <span style="font-weight: normal; font-size: 18px;">(June 2026 - August 2026)</span></p>
+            <ul style="margin-top: 5px; line-height: 1.6;">
+                <li>Created training datasets for machine learning models by classifying field imagery, and digitized complex building geometries using AI-assisted GIS tools.</li>
+                <li>Executed spatial, topographical, and network analyses for urban planning projects (including <b>Disaster Assembly Area Modeling</b> and <b>GeoVolt EV Charging Stations</b>) utilizing MapInfo Pro and Google Earth Engine (GEE).</li>
+                <li>Maintained spatial database integrity and processed geospatial data into GeoJSON format to facilitate backend integration for the software development team.</li>
+            </ul>
+            
+            <hr style="border: 1px solid #000; margin: 30px 0;">
+            
+            <h2 style="margin-top: 0; color: #216fcf; font-size: 32px; letter-spacing: 1px;"> HKMO 3rd Software Development Camp</h2>
+            <p style="font-weight: bold; font-size: 24px; margin-bottom: 10px;">Project Developer: "Tarım Zamanı" <span style="font-weight: normal; font-size: 18px;">(February 2026)</span></p>
+            <ul style="margin-top: 5px; line-height: 1.6;">
+                <li>Developed an agricultural drought monitoring system by performing NDVI analysis on Sentinel-2 satellite imagery.</li>
+                <li>Constructed a database architecture using PostGIS and SQL for efficient storage and querying of large-scale spatial datasets.</li>
+                <li>Designed and implemented a high-performance RESTful API using FastAPI to serve processed geospatial data and NDVI results.</li>
+            </ul>
+            
+            <hr style="border: 1px solid #000; margin: 30px 0;">
+
+            <h2 style="margin-top: 0; color: #216fcf; font-size: 32px; letter-spacing: 1px;"> Nil Haritacılık</h2>
+            <p style="font-weight: bold; font-size: 24px; margin-bottom: 10px;">Geomatic Engineer Intern <span style="font-weight: normal; font-size: 18px;">(July 2024 - August 2024)</span></p>
+            <ul style="margin-top: 5px; line-height: 1.6;">
+                <li>Actively participated in the technical drawing and calculation processes of land subdivision and consolidation projects using Netcad software.</li>
+                <li>Prepared technical documentation and declarations in strict compliance with the standards of the General Directorate of Land Registry and Cadastre (TKGM).</li>
+            </ul>
+
+        </div>
+    </div>
+
+    <!-- Particles Konfigürasyonu -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 }, 
+                "color": { "value": "#D4F1F4"}, 
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4 },
+                "size": { "value": 5 }, 
+                "line_linked": {
+                    "enable": true, "distance": 170, "color": "#000000", "opacity": 0.3, "width": 1
+                },
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, 
+                    "onclick": { "enable": true, "mode": "push" } 
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+</body>
+</html>

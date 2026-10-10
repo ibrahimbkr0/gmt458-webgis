@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,9 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - İbrahim Bakır</title>
     <link rel="stylesheet" href="style.css">
+    
+    <!-- 3D Model Kütüphanesi (En üste, Head içine aldım) -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
-    <body>
+    
     <!-- Particles kütüphanesini çekiyoruz -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     
@@ -17,7 +21,6 @@
     <!-- EKRANI İKİYE BÖLEN ANA VİTRİN -->
     <div class="split-container">
         
-        <!-- YENİ 7'Lİ SOL MENÜ -->
         <!-- YENİ BAŞLIKLI VE 7'Lİ SOL MENÜ -->
         <div class="left-menu">
             
@@ -31,60 +34,13 @@
             <a href="#about" class="menu-item">About</a>
             <a href="#interests" class="menu-item">Interests</a>
             <a href="#education" class="menu-item">Education</a>
-            <a href="#experience" class="menu-item">Experience</a>
+            <a href="experience.html" class="menu-item">Experience</a>
             <a href="#skills" class="menu-item">Skills</a>
             <a href="#languages" class="menu-item">Languages</a>
-            <a href="#contact" class="menu-item">Contact</a>
+            <a href="contact.html" class="menu-item">Contact</a>
         </div>
 
-        <!-- SAĞ 3D MODEL (Sadece 1 tane olmalı) -->
-        <div class="right-gif">
-            <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="60deg" auto-rotate-delay="1000" class="face-model"></model-viewer>
-        </div>
-
-    </div> <!-- VİTRİN BURADA KESİNLİKLE KAPANMALI -->
-
-
-    <!-- AŞAĞI KAYILDIĞINDA GÖRÜNECEK 7 YENİ BÖLÜM -->
-    <section id="about" class="content-section">
-        <h1>ABOUT</h1>
-        <p>Hakkımda yazısı buraya gelecek...</p>
-    </section>
-
-    <section id="interests" class="content-section">
-        <h1>INTERESTS</h1>
-        <p>İlgi alanları (GIS, Yazılım, Y2K Moda vb.) buraya gelecek...</p>
-    </section>
-
-    <section id="education" class="content-section">
-        <h1>EDUCATION</h1>
-        <p>Hacettepe Üniversitesi Geomatik Mühendisliği bilgileri...</p>
-    </section>
-
-    <section id="experience" class="content-section">
-        <h1>EXPERIENCE</h1>
-        <p>Başarsoft Stajı, H&M Deneyimi ve Harita Projeleri...</p>
-    </section>
-
-    <section id="skills" class="content-section">
-        <h1>SKILLS</h1>
-        <p>Python, QGIS, PostGIS yetenekleri...</p>
-    </section>
-
-    <section id="languages" class="content-section">
-        <h1>LANGUAGES</h1>
-        <p>İngilizce, Türkçe vb. dil bilgileri...</p>
-    </section>
-
-    <section id="contact" class="content-section">
-        <h1>CONTACT</h1>
-        <p>İletişim bilgileri...</p>
-    </section>
-        <!-- Sağ Kısım: 3D Kafa GIF'i -->
-        <div class="right-gif">
-            <!-- Sen kendi GIF'ini hazırlayana kadar yer tutucu bir görsel ekliyorum -->
-            <!-- Sağ Kısım: 3D Model -->
-        <!-- Sağ Kısım: 3D Model -->
+        <!-- SAĞ 3D MODEL (Sadece Burada Kalacak) -->
         <div class="right-gif">
             <model-viewer 
                 src="model.glb" 
@@ -96,29 +52,94 @@
                 class="face-model">
             </model-viewer>
         </div>
-        </div>
-        </div>
 
-    </div>
+    </div> <!-- VİTRİN BURADA KESİNLİKLE KAPANMALI -->
+
+
+    <!-- ======================================================== -->
+    <!-- AŞAĞI KAYILDIĞINDA GÖRÜNECEK OLAN CV BÖLÜMLERİ BAŞLIYOR  -->
+    <!-- ======================================================== -->
+    
+    <!-- 1. ABOUT ME -->
+    <section id="about" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 80px; margin: 0; text-align: center;">ABOUT ME</h1>
+        <hr style="width: 150px; border: 3px solid #000000; margin: 20px 0 40px 0;">
+        <div style="width: 80%; max-width: 900px; text-align: center; font-family: sans-serif; font-size: 20px; line-height: 1.6; background-color: #000000; color: #FFFFFF; padding: 40px; border: 5px solid #FFD700; box-shadow: 15px 15px 0px rgba(0,0,0,0.5);">
+            <p>I am a motivated Geomatic Engineering student with strong communication skills and a collaborative spirit. Benefiting from the rigorous and interdisciplinary curriculum at Hacettepe University, I have established a robust academic foundation.</p>
+            <p>The program provides a comprehensive synergy between traditional engineering pillars—such as geodesy and photogrammetry—and modern domains like GIS, Remote Sensing, and Data Science. This diverse coursework has equipped me with the analytical mindset required to address complex engineering challenges through advanced software solutions.</p>
+        </div>
+    </section>
+
+    <!-- 2. INTERESTS -->
+    <section id="interests" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 80px; margin: 0; text-align: center;">AREAS OF INTEREST</h1>
+        <hr style="width: 150px; border: 3px solid #000000; margin: 20px 0 40px 0;">
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; max-width: 1000px; font-family: sans-serif; font-size: 20px;">
+            <div style="background: #FFD700; color: #000; padding: 20px 40px; border: 4px solid #000; box-shadow: 8px 8px 0px #000; font-weight: bold;">🌍 GIS</div>
+            <div style="background: #FFD700; color: #000; padding: 20px 40px; border: 4px solid #000; box-shadow: 8px 8px 0px #000; font-weight: bold;">💻 Web GIS & Backend</div>
+            <div style="background: #FFD700; color: #000; padding: 20px 40px; border: 4px solid #000; box-shadow: 8px 8px 0px #000; font-weight: bold;">🛰️ Satellite Image Processing</div>
+            <div style="background: #FFD700; color: #000; padding: 20px 40px; border: 4px solid #000; box-shadow: 8px 8px 0px #000; font-weight: bold;">📡 Satellite Orbit Analysis & GNSS</div>
+        </div>
+    </section>
+
+    <!-- 3. EDUCATION -->
+    <section id="education" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 80px; margin: 0; text-align: center;">EDUCATION</h1>
+        <hr style="width: 150px; border: 3px solid #000000; margin: 20px 0 40px 0;">
+        <div style="text-align: center; font-family: sans-serif; background-color: #000000; color: #FFD700; padding: 50px 80px; border: 5px solid #FFD700; box-shadow: 15px 15px 0px rgba(0,0,0,0.5);">
+            <h2 style="font-size: 40px; margin: 0; color: #FFFFFF;">HACETTEPE UNIVERSITY</h2>
+            <p style="font-size: 28px; margin: 10px 0;">Geomatic Engineering Student</p>
+            <p style="font-size: 20px; color: #CCCCCC;">Ankara, Türkiye</p>
+        </div>
+    </section>
+
+    <!-- 4. SKILLS -->
+    <section id="skills" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 80px; margin: 0; text-align: center;">SKILLS</h1>
+        <hr style="width: 150px; border: 3px solid #000000; margin: 20px 0 40px 0;">
+        <div style="width: 80%; max-width: 1000px; display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; font-family: sans-serif; font-size: 18px;">
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">Python & Java</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">PostgreSQL & PostGIS</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">QGIS & MapInfo Pro</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">Google Earth Engine (GEE)</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">Geographic Information Systems</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">Remote Sensing & Geodesy</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">Agisoft Metashape</span>
+            <span style="background: #000; color: #FFF; padding: 15px 25px; border: 3px solid #FFD700;">NETCAD & CAD Software</span>
+        </div>
+    </section>
+
+    <!-- 5. LANGUAGES -->
+    <section id="languages" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+        <h1 style="font-size: 80px; margin: 0; text-align: center;">LANGUAGES</h1>
+        <hr style="width: 150px; border: 3px solid #000000; margin: 20px 0 40px 0;">
+        <div style="text-align: center; font-family: sans-serif; background-color: #FFD700; color: #000000; padding: 40px 60px; border: 5px solid #000000; box-shadow: 15px 15px 0px rgba(0,0,0,1);">
+            <h2 style="font-size: 36px; margin: 0; color: #216fcf;">ENGLISH</h2>
+            <p style="font-size: 24px; margin-top: 15px; font-weight: bold;">Advanced <span style="font-weight: normal; font-size: 20px;">(Reading & Listening)</span></p>
+            <p style="font-size: 24px; margin-top: 5px; font-weight: bold;">Upper-Intermediate <span style="font-weight: normal; font-size: 20px;">(Speaking & Writing)</span></p>
+        </div>
+    </section>
+
+
     <!-- Particles Konfigürasyonu -->
     <script>
         particlesJS("particles-js", {
             "particles": {
-                "number": { "value": 80 }, /* Ekranda kaç nokta olacağı */
-                "color": { "value": "#D4F1F4"}, /* Noktaların rengi (Siyah) */
+                "number": { "value": 80 }, 
+                "color": { "value": "#D4F1F4"}, 
                 "shape": { "type": "circle" },
                 "opacity": { "value": 0.4 },
-                "size": { "value": 5 }, /* Noktaların büyüklüğü */
+                "size": { "value": 5 }, 
                 "line_linked": {
                     "enable": true,
-                    "distance": 170, /* Çizgilerin birleşme mesafesi */
-                    "color": "#000000", /* Çizgi rengi (Siyah) */
+                    "distance": 170, 
+                    "color": "#000000", 
                     "opacity": 0.3,
                     "width": 1
                 },
                 "move": {
                     "enable": true,
-                    "speed": 2, /* Hareket hızı */
+                    "speed": 2, 
                     "direction": "none",
                     "random": false,
                     "straight": false,
@@ -129,16 +150,44 @@
             "interactivity": {
                 "detect_on": "canvas",
                 "events": {
-                    "onhover": { "enable": true, "mode": "grab" }, /* Fareyle üzerine gelince ağlar fareye tutunur */
-                    "onclick": { "enable": true, "mode": "push" } /* Tıklayınca yeni nokta fırlatır */
+                    "onhover": { "enable": true, "mode": "grab" }, 
+                    "onclick": { "enable": true, "mode": "push" } 
                 }
             },
             "retina_detect": true
         });
     </script>
-    <!-- 3D Model Görüntüleyici Kütüphanesi -->
-    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
 </body>
 </html>
-</body>
-</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

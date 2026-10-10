@@ -1,69 +1,95 @@
-// 1. Initialize Leaflet Map
-// Zoom seviyesini 2 yaptık ki haritayı uzaklaştırıp Dünyanın tekrar etmediğini test edebilelim
-const leafletMap = L.map('leaflet-map').setView([39.92077, 32.85411], 2);
+// ==========================================
+// 1. LEAFLET HARİTASI (Hacettepe Geomatik)
+// ==========================================
 
-// Adding OSM layer with noWrap to prevent Earth from repeating
+// Hacettepe Üniversitesi Beytepe Kampüsü Geomatik Müh. Koordinatları
+var hacettepeCoords = [39.8671, 32.7335];
+
+// Haritayı uzak bir açıyla başlatıyoruz (Zoom Seviyesi: 5)
+var leafletMap = L.map('leaflet-map').setView(hacettepeCoords, 5);
+
+// OpenStreetMap katmanı ekleniyor
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; OpenStreetMap contributors',
-    noWrap: true // Issue 2 Çözümü (Leaflet)
+    maxZoom: 19,
+    attribution: '© OpenStreetMap',
+    noWrap: true // DÜZELTME: Dünyanın sağa/sola tekrar etmesini engeller
 }).addTo(leafletMap);
 
+// Marker direkt olarak haritaya ekleniyor ve yok olmuyor
+var geomatikMarker = L.marker(hacettepeCoords).addTo(leafletMap);
 
-// 2. Initialize OpenLayers Map
-const olMap = new ol.Map({
-    target: 'ol-map',
-    layers: [
-        new ol.layer.Tile({
-            // Adding OSM source with wrapX false to prevent Earth from repeating
-            source: new ol.source.OSM({
-                wrapX: false // Issue 2 Çözümü (OpenLayers)
-            })
-        })
-    ],
-    view: new ol.View({
-        center: ol.proj.fromLonLat([32.85411, 39.92077]), 
-        zoom: 2 // Zoom seviyesini 2 yaptık
-    })
-});
+// Popup yazısı ekleniyor ve otomatik açık kalması sağlanıyor
+geomatikMarker.bindPopup('<b>You can find me here</b>').openPopup();
+
+
 // ==========================================
-// ISSUE 1 SOLUTION: ZOOM THRESHOLD FOR MARKERS
+// 2. OPENLAYERS HARİTASI (Kurtuluş Metro)
 // ==========================================
 
-const zoomThreshold = 8; // Markers will only appear if zoom level is 8 or higher
+// Kurtuluş Metro İstasyonu Koordinatları (Boylam, Enlem)
+var kurtulusCoords = ol.proj.fromLonLat([32.8732, 39.9324]);
 
-// --- LEAFLET MARKER LOGIC ---
-const leafletMarker = L.marker([39.92077, 32.85411]); // Marker at Ankara
-
-// Check zoom level whenever the map is zoomed
-leafletMap.on('zoomend', function() {
-    if (leafletMap.getZoom() >= zoomThreshold) {
-        leafletMap.addLayer(leafletMarker); // Show marker
-    } else {
-        leafletMap.removeLayer(leafletMarker); // Hide marker
-    }
+// Marker'ın Geometrisi
+var markerFeature = new ol.Feature({
+  geometry: new ol.geom.Point(kurtulusCoords),
 });
 
+// Marker'a Sarı-Siyah tasarım veriyoruz
+var markerStyle = new ol.style.Style({
+  image: new ol.style.Circle({
+    radius: 9,
+    fill: new ol.style.Fill({color: '#FFD700'}),
+    stroke: new ol.style.Stroke({color: '#000000', width: 3})
+  })
+});
+markerFeature.setStyle(markerStyle);
 
-// --- OPENLAYERS MARKER LOGIC ---
-// 1. Create the marker feature
-const olMarkerFeature = new ol.Feature({
-    geometry: new ol.geom.Point(ol.proj.fromLonLat([32.85411, 39.92077]))
+var vectorLayer = new ol.layer.Vector({
+  source: new ol.source.Vector({
+    features: [markerFeature]
+  })
 });
 
-// 2. Create a vector layer for the marker and use the built-in 'minZoom' property
-const olMarkerLayer = new ol.layer.Vector({
-    source: new ol.source.Vector({
-        features: [olMarkerFeature]
+// Harita Yükleniyor
+var olMap = new ol.Map({
+  target: 'ol-map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.OSM({
+          wrapX: false // Dünyanın tekrar etmesini engeller
+      })
     }),
-    style: new ol.style.Style({
-        image: new ol.style.Circle({
-            radius: 7,
-            fill: new ol.style.Fill({color: 'red'}),
-            stroke: new ol.style.Stroke({color: 'black', width: 2})
-        })
-    }),
-    minZoom: zoomThreshold // This built-in property automatically hides the layer below the threshold
+    vectorLayer
+  ],
+  view: new ol.View({
+    center: kurtulusCoords,
+    zoom: 15,
+    minZoom: 2 
+  })
 });
 
-// Add the layer to the OpenLayers map
-olMap.addLayer(olMarkerLayer);
+// ==========================================
+// OPENLAYERS İÇİN POPUP (You can find me here) YAZISI EKLENİYOR
+// ==========================================
+
+// Popup için sıfırdan bir HTML kutusu oluşturuyoruz
+var popupElement = document.createElement('div');
+popupElement.style.backgroundColor = 'white';
+popupElement.style.padding = '5px 10px';
+popupElement.style.borderRadius = '5px';
+popupElement.style.border = '1px solid black';
+popupElement.style.fontSize = '14px';
+popupElement.style.fontWeight = 'bold';
+popupElement.style.color = 'black';
+popupElement.innerHTML = 'You can find me here';
+
+// Bu kutuyu OpenLayers haritasında marker'ın tam üstüne (offset ile) sabitliyoruz
+var popupOverlay = new ol.Overlay({
+  element: popupElement,
+  position: kurtulusCoords,
+  positioning: 'bottom-center',
+  offset: [0, -15], // Sarı noktanın tam üstünde durması için biraz yukarı kaydırıyoruz
+  stopEvent: false
+});
+
+olMap.addOverlay(popupOverlay);
