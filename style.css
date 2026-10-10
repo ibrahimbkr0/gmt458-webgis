@@ -1,43 +1,116 @@
-/* Tüm sayfanın genel ayarları */
+/* --- GENEL AYARLAR --- */
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
 body {
-    background-color: #f4f4f9; /* Açık gri bir arka plan */
-    font-family: Arial, sans-serif; /* Daha modern bir yazı tipi */
-    text-align: center; /* Yazıları ortalar */
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #6d5d02 0%, #FFD700 35%, #FFFFFF 75%, #FFFFFF 100%);
+    background-attachment: fixed;
+    color: #000000;
+    font-family: "Bebas Neue", sans-serif;
+    
+    /* Yana kaymayı engelleyen sihirli kodumuz: */
+    overflow-x: hidden; 
 }
 
-/* Menü (nav) çubuğunun tasarımı */
-nav {
-    background-color: #2c3e50; /* Koyu lacivert arka plan */
-    padding: 15px;
-    margin-bottom: 20px;
+/* --- EKRANI İKİYE BÖLEN YAPI (TAM SOLA YAPIŞMASI İÇİN GÜNCELLENDİ) --- */
+.split-container {
+    display: flex;
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    justify-content: space-between;
+    align-items: center;
 }
 
-/* Menüdeki linklerin (a) tasarımı */
-nav a {
-    color: white; /* Yazı rengi beyaz */
-    text-decoration: none; /* Alt çizgiyi kaldırır */
-    margin: 0 15px; /* Linkler arası boşluk bırakır */
-    font-size: 18px;
+/* --- SOL MENÜ (DUVAR GİBİ BAŞLAMASI İÇİN) --- */
+.left-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Kutular arası mesafe */
+    align-items: flex-start; /* Tam sola yaslar */
 }
 
-/* Menüdeki linklerin üzerine fareyle gelince (hover) ne olacağı */
-nav a:hover {
-    color: #f39c12; /* Fareyle üzerine gelince turuncu olsun */
+/* --- KESKİN KUTU TASARIMI --- */
+/* --- KESKİN KUTU TASARIMI --- */
+/* --- KARŞILAMA YAZISI (YENİ EKLENDİ) --- */
+.welcome-title {
+    color: #000000;
+    margin-bottom: 20px; /* Menü butonları ile arasına boşluk bırakır */
 }
-/* Tablo Tasarımı */
-.profil-tablosu {
-    margin: 0 auto; /* Tabloyu sayfanın ortasına hizalar */
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px; /* Kenarları yumuşatır */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Hafif bir gölge verir */
-    text-align: left; /* Tablo içindeki yazıları sola yaslar */
+.welcome-title h1 {
+    font-size: 64px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 2px; /* Harflerin arasını biraz açarak havalı gösterir */
+}
+.welcome-title p {
+    font-size: 24px;
+    margin: 5px 0 0 0;
+    color: #216fcf; /* Buton yazılarındaki mavi tonunu alt başlıkta da kullandık */
+    letter-spacing: 4px;
 }
 
-/* Profil Resmi Tasarımı */
-.profil-resmi {
-    border-radius: 50%; /* Resmi yuvarlak yapar */
-    width: 150px;
-    height: 150px;
-    margin-right: 20px;
+/* --- KESKİN KUTU TASARIMI (BOYU VE İÇİ KÜÇÜLTÜLDÜ) --- */
+.menu-item {
+    text-decoration: none;
+    color: #216fcf; 
+    background-color: #FFD700; 
+    
+    font-size: 32px; /* Yazı boyutunu 48'den 32'ye düşürdük */
+    padding: 8px 0; /* İç boşluğu 15'ten 8'e düşürdük (Kutu daha ince oldu) */
+    
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center; 
+    border-radius: 0; 
+    border: 4px solid #000000;
+    
+    box-shadow: 8px 8px 0px rgba(0, 0, 0, 0.9); /* Gölgeyi de kutu küçüldüğü için biraz kıstık */
+    transition: all 0.3s ease; 
+    display: block; 
+}
+
+/* =========================================
+   7 BASAMAKLI MERDİVEN EFEKTİ (ENİ KÜÇÜLTÜLDÜ)
+   ========================================= */
+/* Genişlikleri ortalama 100 piksel kadar daralttık */
+.menu-item:nth-of-type(1) { width: 350px; } /* Eski: 450px */
+.menu-item:nth-of-type(2) { width: 330px; } 
+.menu-item:nth-of-type(3) { width: 310px; } 
+.menu-item:nth-of-type(4) { width: 290px; } 
+.menu-item:nth-of-type(5) { width: 270px; } 
+.menu-item:nth-of-type(6) { width: 250px; } 
+.menu-item:nth-of-type(7) { width: 230px; }
+
+/* =========================================
+   DOKUNUNCA (HOVER) OLACAKLAR
+   ========================================= */
+.menu-item:hover {
+    background-color: #FFF4A3; /* Beyaz-Sarı arası açık pastel bir renk */
+    color: #000000; /* Yazılar siyah */
+    
+    /* Üzerine gelince hissiyatı artırmak için kutu biraz sağa kaysın */
+    transform: translateX(15px); 
+    box-shadow: 15px 15px 0px rgba(0, 0, 0, 0.9);
+}
+
+/* --- SAĞ 3D MODEL --- */
+.face-model {
+    width: 550px; 
+    height: 750px;
+    background-color: transparent; 
+    box-shadow: none; 
+    border-radius: 0; 
+    outline: none; 
+}
+
+/* --- HAREKETLİ ARKA PLAN (PARTICLES) --- */
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1; 
 }

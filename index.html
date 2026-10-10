@@ -3,17 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Home - İbrahim Bakır</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<nav>
-        <a href="index.html">Ana Sayfa</a> |
-        <a href="aboutme.html">Hakkımda</a> |
-        <a href="projects.html">Projeler</a>
-    </nav>
-</nav>
-<h1>Ana Sayfa</h1>
-<p>Web GIS projeme hoş geldiniz!</p>
+    <body>
+    <!-- Particles kütüphanesini çekiyoruz -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    
+    <!-- Animasyonun oynayacağı şeffaf arka plan kutusu -->
+    <div id="particles-js"></div>
+
+    <!-- EKRANI İKİYE BÖLEN ANA VİTRİN -->
+    <div class="split-container">
+        
+        <!-- YENİ 7'Lİ SOL MENÜ -->
+        <!-- YENİ BAŞLIKLI VE 7'Lİ SOL MENÜ -->
+        <div class="left-menu">
+            
+            <!-- Karşılama Başlığı -->
+            <div class="welcome-title">
+                <h1>HELLO, I'M İBRAHİM BAKIR</h1>
+                <p>GEOMATICS ENGINEER</p>
+            </div>
+
+            <!-- Linkler -->
+            <a href="#about" class="menu-item">About</a>
+            <a href="#interests" class="menu-item">Interests</a>
+            <a href="#education" class="menu-item">Education</a>
+            <a href="#experience" class="menu-item">Experience</a>
+            <a href="#skills" class="menu-item">Skills</a>
+            <a href="#languages" class="menu-item">Languages</a>
+            <a href="#contact" class="menu-item">Contact</a>
+        </div>
+
+        <!-- SAĞ 3D MODEL (Sadece 1 tane olmalı) -->
+        <div class="right-gif">
+            <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="60deg" auto-rotate-delay="1000" class="face-model"></model-viewer>
+        </div>
+
+    </div> <!-- VİTRİN BURADA KESİNLİKLE KAPANMALI -->
+
+
+    <!-- AŞAĞI KAYILDIĞINDA GÖRÜNECEK 7 YENİ BÖLÜM -->
+    <section id="about" class="content-section">
+        <h1>ABOUT</h1>
+        <p>Hakkımda yazısı buraya gelecek...</p>
+    </section>
+
+    <section id="interests" class="content-section">
+        <h1>INTERESTS</h1>
+        <p>İlgi alanları (GIS, Yazılım, Y2K Moda vb.) buraya gelecek...</p>
+    </section>
+
+    <section id="education" class="content-section">
+        <h1>EDUCATION</h1>
+        <p>Hacettepe Üniversitesi Geomatik Mühendisliği bilgileri...</p>
+    </section>
+
+    <section id="experience" class="content-section">
+        <h1>EXPERIENCE</h1>
+        <p>Başarsoft Stajı, H&M Deneyimi ve Harita Projeleri...</p>
+    </section>
+
+    <section id="skills" class="content-section">
+        <h1>SKILLS</h1>
+        <p>Python, QGIS, PostGIS yetenekleri...</p>
+    </section>
+
+    <section id="languages" class="content-section">
+        <h1>LANGUAGES</h1>
+        <p>İngilizce, Türkçe vb. dil bilgileri...</p>
+    </section>
+
+    <section id="contact" class="content-section">
+        <h1>CONTACT</h1>
+        <p>İletişim bilgileri...</p>
+    </section>
+        <!-- Sağ Kısım: 3D Kafa GIF'i -->
+        <div class="right-gif">
+            <!-- Sen kendi GIF'ini hazırlayana kadar yer tutucu bir görsel ekliyorum -->
+            <!-- Sağ Kısım: 3D Model -->
+        <!-- Sağ Kısım: 3D Model -->
+        <div class="right-gif">
+            <model-viewer 
+                src="model.glb" 
+                alt="3D Yüz Modelim" 
+                auto-rotate 
+                camera-controls 
+                rotation-per-second="45deg" 
+                auto-rotate-delay="1000" 
+                class="face-model">
+            </model-viewer>
+        </div>
+        </div>
+        </div>
+
+    </div>
+    <!-- Particles Konfigürasyonu -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": { "value": 80 }, /* Ekranda kaç nokta olacağı */
+                "color": { "value": "#D4F1F4"}, /* Noktaların rengi (Siyah) */
+                "shape": { "type": "circle" },
+                "opacity": { "value": 0.4 },
+                "size": { "value": 5 }, /* Noktaların büyüklüğü */
+                "line_linked": {
+                    "enable": true,
+                    "distance": 170, /* Çizgilerin birleşme mesafesi */
+                    "color": "#000000", /* Çizgi rengi (Siyah) */
+                    "opacity": 0.3,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 2, /* Hareket hızı */
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": false
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": { "enable": true, "mode": "grab" }, /* Fareyle üzerine gelince ağlar fareye tutunur */
+                    "onclick": { "enable": true, "mode": "push" } /* Tıklayınca yeni nokta fırlatır */
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
+    <!-- 3D Model Görüntüleyici Kütüphanesi -->
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</body>
+</html>
 </body>
 </html>
