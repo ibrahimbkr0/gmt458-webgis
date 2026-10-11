@@ -6,26 +6,26 @@
     <title>Home - İbrahim Bakır</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- 3D Model Kütüphanesi -->
+    <!-- 3D Model library -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     
-    <!-- Particles kütüphanesi -->
+    <!-- Particles library-->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div id="particles-js"></div>
 
-    <!-- EKRANI İKİYE BÖLEN ANA VİTRİN -->
+    <!-- Screen split -->
     <div class="split-container">
         
         <div class="left-menu">
-            <!-- Karşılama Başlığı -->
+            <!-- The Greeting -->
             <div class="welcome-title">
                 <h1>HELLO, I'M İBRAHİM BAKIR</h1>
                 <p>GEOMATICS ENGINEER</p>
             </div>
 
-            <!-- Linkler -->
+            <!-- Links -->
             <a href="#about" class="menu-item">About</a>
             <a href="#interests" class="menu-item">Interests</a>
             <a href="#education" class="menu-item">Education</a>
@@ -35,16 +35,16 @@
             <a href="contact.html" class="menu-item">Contact</a>
         </div>
 
-        <!-- TEK VE ORİJİNAL 3D MODELİMİZ (ID eklendi) -->
+        <!-- 3D MODEL (ID eklendi) -->
         <div class="right-gif" id="my-3d-model">
             <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" auto-rotate-delay="1000" class="face-model"></model-viewer>
         </div>
 
-    </div> <!-- VİTRİN KAPANIR -->
+    </div> 
 
 
     <!-- ======================================================== -->
-    <!-- CV BÖLÜMLERİ BAŞLIYOR  -->
+    <!-- CV PART  -->
     <!-- ======================================================== -->
     
     <section id="about" class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center;">
@@ -102,7 +102,7 @@
         </div>
     </section>
 
-    <!-- Particles Ayarları -->
+    <!-- Particles Settings -->
     <script>
         particlesJS("particles-js", {
             "particles": { "number": { "value": 80 }, "color": { "value": "#D4F1F4"}, "shape": { "type": "circle" }, "opacity": { "value": 0.4 }, "size": { "value": 5 }, "line_linked": { "enable": true, "distance": 170, "color": "#000000", "opacity": 0.3, "width": 1 }, "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false } },
@@ -110,7 +110,7 @@
         });
     </script>
 
-    <!-- !!! İŞTE SİHİRLİ JS KODU: EKRAN KÜÇÜLDÜĞÜNDE MODELİ IŞINLAR !!! -->
+    <!-- !!! JS KODU: EKRAN KÜÇÜLDÜĞÜNDE MODELİ IŞINLAR !!! -->
     <script>
         function teleportModel() {
             var modelBox = document.getElementById('my-3d-model');

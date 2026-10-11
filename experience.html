@@ -8,11 +8,11 @@
 </head>
 <body>
 
-    <!-- Particles Kütüphanesi ve Kutusu -->
+    <!-- Particles Library-->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <div id="particles-js"></div>
 
-    <!-- Ana Sayfaya Geri Dönüş Butonu -->
+    <!-- Back button -->
     <a href="index.html" class="back-btn">← BACK TO HOME</a>
 
     <div class="projects-container">
@@ -22,7 +22,7 @@
             <p>MY PROFESSIONAL JOURNEY</p>
         </div>
         
-        <!-- Deneyimlerin Yazılı Olduğu Sarı Kutu -->
+        <!-- Experience Box -->
         <div style="width: 80%; max-width: 1000px; color: #000; font-size: 20px; background: #FFD700; padding: 40px; border: 5px solid #000; box-shadow: 15px 15px 0px rgba(0,0,0,1); text-align: left;">
             
             <h2 style="margin-top: 0; color: #216fcf; font-size: 32px; letter-spacing: 1px;"> Basarsoft</h2>
@@ -54,8 +54,38 @@
 
         </div>
     </div>
+    <!-- Tables -->
+    <section class="content-section" style="width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 40px;">
+        <h2 style="font-size: 40px; margin-bottom: 20px;">SOFTWARE & TOOLS</h2>
+        <table style="width: 80%; max-width: 800px; border-collapse: collapse; font-family: sans-serif; text-align: left; background-color: #000; border: 3px solid #FFD700; box-shadow: 10px 10px 0px rgba(0,0,0,0.8);">
+            <thead>
+                <tr style="background-color: #FFD700; color: #000;">
+                    <th style="padding: 15px; border: 2px solid #000; font-size: 20px;">Software</th>
+                    <th style="padding: 15px; border: 2px solid #000; font-size: 20px;">Icon</th>
+                    <th style="padding: 15px; border: 2px solid #000; font-size: 20px;">Proficiency Level</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">QGIS</td>
+                    <td style="padding: 15px; border: 2px solid #FFD700;"><img src="https://upload.wikimedia.org/wikipedia/commons/9/91/QGIS_logo_new.svg" alt="QGIS" style="width: 40px;"></td>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">Advanced</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">PostgreSQL</td>
+                    <td style="padding: 15px; border: 2px solid #FFD700;"><img src="https://upload.wikimedia.org/wikipedia/commons/2/29/Postgresql_elephant.svg" alt="PostgreSQL" style="width: 40px;"></td>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">Intermediate</td>
+                </tr>
+                <tr>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">Python</td>
+                    <td style="padding: 15px; border: 2px solid #FFD700;"><img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" alt="Python" style="width: 40px;"></td>
+                    <td style="padding: 15px; border: 2px solid #FFD700; color: #FFF;">Advanced</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-    <!-- Particles Konfigürasyonu -->
+    <!-- Particles Configrations -->
     <script>
         particlesJS("particles-js", {
             "particles": {
