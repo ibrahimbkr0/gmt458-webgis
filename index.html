@@ -21,7 +21,7 @@
     <!-- EKRANI İKİYE BÖLEN ANA VİTRİN -->
     <div class="split-container">
         
-        <!-- YENİ BAŞLIKLI VE 7'Lİ SOL MENÜ -->
+        <!-- SOL MENÜ -->
         <div class="left-menu">
             
             <!-- Karşılama Başlığı -->
@@ -30,7 +30,7 @@
                 <p>GEOMATICS ENGINEER</p>
             </div>
 
-            <!-- Linkler -->
+            <!-- Linkler (Hatasız Liste) -->
             <a href="#about" class="menu-item">About</a>
             <a href="#interests" class="menu-item">Interests</a>
             <a href="#education" class="menu-item">Education</a>
@@ -38,19 +38,18 @@
             <a href="#skills" class="menu-item">Skills</a>
             <a href="#languages" class="menu-item">Languages</a>
             <a href="contact.html" class="menu-item">Contact</a>
+
+            <!-- SADECE TELEFONDA GÖRÜNECEK 3D MODEL -->
+            <!-- Sayma sırasını bozmaması için kodun EN ALTINA aldık -->
+            <div class="mobile-model">
+                <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" class="face-model"></model-viewer>
+            </div>
+
         </div>
 
-        <!-- SAĞ 3D MODEL (Sadece Burada Kalacak) -->
+        <!-- SAĞ 3D MODEL (Sadece Masaüstünde Görünür) -->
         <div class="right-gif">
-            <model-viewer 
-                src="model.glb" 
-                alt="3D Yüz Modelim" 
-                auto-rotate 
-                camera-controls 
-                rotation-per-second="45deg" 
-                auto-rotate-delay="1000" 
-                class="face-model">
-            </model-viewer>
+            <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" auto-rotate-delay="1000" class="face-model"></model-viewer>
         </div>
 
     </div> <!-- VİTRİN BURADA KESİNLİKLE KAPANMALI -->
