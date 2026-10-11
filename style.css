@@ -206,74 +206,76 @@ body {
 }
 /* =======================================================
    MOBİL UYUM (RESPONSIVE DESIGN) SİHRİ
-   Sadece ekran 768px (Tablet ve Telefon) altındaysa çalışır
    ======================================================= */
 @media (max-width: 768px) {
     
-    /* 1. ANA EKRAN (HOME): Yan yana durmayı iptal edip alt alta dizer */
+    /* 1. ANA EKRAN */
     .split-container {
-        flex-direction: column; /* İçerikleri dikey sıralar */
+        display: flex;
+        flex-direction: column;
         height: auto;
-        padding-top: 120px;
-        justify-content: center;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        align-items: center;
     }
 
-    /* 2. SOL MENÜ VE BAŞLIKLAR: Her şeyi merkeze (ortaya) hizalar */
     .left-menu {
-        align-items: center; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         width: 100%;
     }
+
+    /* 2. BAŞLIKLAR */
     .welcome-title {
         text-align: center;
-    }
-    .welcome-title h1 { font-size: 45px; } /* Başlığı 64'ten 45'e ufaltır */
-    .welcome-title p { font-size: 18px; }
-
-    /* 3. MERDİVEN MENÜ: Genişlikleri sıfırlayıp telefon ekranına sığdırır */
-    .menu-item:nth-of-type(n) { 
-        width: 90% !important; /* !important eski kuralı ezer */
-        font-size: 24px; 
-    }
-
-    /* 4. 3D MODEL: Boyutunu telefonun enine göre küçültür */
-    .face-model {
         width: 100%;
-        height: 400px;
-        margin-top: 40px;
+        margin-bottom: 10px;
+    }
+    .welcome-title h1 { font-size: 38px; } 
+    .welcome-title p { font-size: 16px; }
+
+    /* 3. SİHİRLİ JS İLE BURAYA IŞINLANAN 3D MODEL */
+    .right-gif {
+        display: flex; 
+        justify-content: center;
+        width: 100%;
+        margin-bottom: 25px;
+        margin-top: 10px;
+    }
+    .face-model {
+        width: 260px !important;
+        height: 260px !important;
     }
 
-    /* 5. CV BÖLÜMLERİ: Dev başlıkları ve kutu boşluklarını daraltır */
-    .content-section { margin-bottom: 80px; padding-top: 50px; }
-    .content-section h1 { font-size: 50px !important; }
+    /* 4. MERDİVEN MENÜ */
+    .menu-item {
+        width: 85% !important; 
+        font-size: 22px; 
+        padding: 8px 0;
+        margin-bottom: 12px; 
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.9);
+    }
+    .menu-item:nth-of-type(n) { width: 85% !important; }
+
+    /* 5. CV BÖLÜMLERİ */
+    .content-section { margin-bottom: 60px; padding-top: 40px; }
+    .content-section h1 { font-size: 45px !important; }
     .content-section div { 
         width: 85% !important; 
         padding: 20px !important; 
-        font-size: 16px !important; /* Yazıları da bir tık ufaltır */
+        font-size: 16px !important; 
     }
 
-    /* 6. HARİTALAR: Harita kutularını yan yana değil alt alta dizer */
+    /* 6. HARİTALAR VE DİĞER SAYFALAR */
     .maps-wrapper {
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 25px;
     }
-    .map-box {
-        width: 90%;
-    }
-}
-/* =======================================================
-   MOBİL UYUM (RESPONSIVE DESIGN) SİHRİ
-   Sadece ekran 768px (Tablet ve Telefon) altındaysa çalışır
-   ======================================================= */
-/* MOBİLDE GÖSTERİLECEK 3D MODEL (Masaüstünde Gizli Kalır) */
-.mobile-model {
-    display: none;
-}
+    .map-box { width: 90%; }
 
-/* =======================================================
-   MOBİL UYUM (RESPONSIVE DESIGN) SİHRİ
-   ======================================================= */
-/* 7. GERİ DÖN BUTONU VE ALT SAYFALAR (Contact, Experience) */
+    /* 7. GERİ DÖN BUTONU VE ALT SAYFALAR */
     .back-btn {
         position: relative !important; 
         display: block !important;
@@ -284,10 +286,10 @@ body {
         width: max-content;
     }
     
-    /* İŞTE ÇÖZÜM BURASI: Taşan başlıkları kurtarıyor */
     .projects-container {
-        height: auto !important; /* İçerik uzadıkça sayfanın da uzamasını sağlar */
-        justify-content: flex-start !important; /* İçeriği ortalamak yerine en üstten (baştan) başlatır */
-        padding-top: 40px !important; /* Üstten nefes alma boşluğu bırakır */
-        padding-bottom: 60px !important; /* Alt kısım için de boşluk bırakır */
+        height: auto !important; 
+        justify-content: flex-start !important; 
+        padding-top: 40px !important; 
+        padding-bottom: 60px !important; 
     }
+}
