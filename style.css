@@ -273,89 +273,7 @@ body {
 /* =======================================================
    MOBİL UYUM (RESPONSIVE DESIGN) SİHRİ
    ======================================================= */
-/* MOBİLDE GÖSTERİLECEK 3D MODEL (Masaüstünde Gizli Kalır) */
-.mobile-model {
-    display: none;
-}
-
-/* =======================================================
-   MOBİL UYUM (RESPONSIVE DESIGN) SİHRİ
-   ======================================================= */
-@media (max-width: 768px) {
-    
-    /* 1. ANA EKRAN */
-    .split-container {
-        display: flex;
-        flex-direction: column;
-        height: auto;
-        padding-top: 50px;
-        padding-bottom: 50px;
-        align-items: center;
-    }
-
-    .left-menu {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    /* 2. BAŞLIKLAR (Order 1: En Üstte) */
-    .welcome-title {
-        order: 1; 
-        text-align: center;
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .welcome-title h1 { font-size: 38px; } 
-    .welcome-title p { font-size: 16px; }
-
-    /* 3. 3D MODEL (Order 2: Başlığın Hemen Altında) */
-    .right-gif {
-        display: none !important; /* Masaüstü modelini gizle */
-    }
-    .mobile-model {
-        order: 2; 
-        display: flex !important; /* Mobil modeli göster */
-        justify-content: center;
-        width: 100%;
-        margin-bottom: 25px;
-        margin-top: 10px;
-    }
-    .face-model {
-        width: 260px;
-        height: 260px;
-    }
-
-    /* 4. MERDİVEN MENÜ (Order 3: En Altta) */
-    .menu-item {
-        order: 3; 
-        width: 85% !important; 
-        font-size: 22px; 
-        padding: 8px 0;
-        margin-bottom: 12px; 
-        box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.9);
-    }
-    .menu-item:nth-of-type(n) { width: 85% !important; }
-
-    /* 5. CV BÖLÜMLERİ */
-    .content-section { margin-bottom: 60px; padding-top: 40px; }
-    .content-section h1 { font-size: 45px !important; }
-    .content-section div { 
-        width: 85% !important; 
-        padding: 20px !important; 
-        font-size: 16px !important; 
-    }
-
-    /* 6. HARİTALAR VE DİĞER SAYFALAR */
-    .maps-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 25px;
-    }
-    .map-box { width: 90%; }
-
-    /* 7. GERİ DÖN BUTONU */
+/* 7. GERİ DÖN BUTONU VE ALT SAYFALAR (Contact, Experience) */
     .back-btn {
         position: relative !important; 
         display: block !important;
@@ -365,7 +283,11 @@ body {
         text-align: center;
         width: max-content;
     }
+    
+    /* İŞTE ÇÖZÜM BURASI: Taşan başlıkları kurtarıyor */
     .projects-container {
-        padding-top: 10px !important; 
+        height: auto !important; /* İçerik uzadıkça sayfanın da uzamasını sağlar */
+        justify-content: flex-start !important; /* İçeriği ortalamak yerine en üstten (baştan) başlatır */
+        padding-top: 40px !important; /* Üstten nefes alma boşluğu bırakır */
+        padding-bottom: 60px !important; /* Alt kısım için de boşluk bırakır */
     }
-}
