@@ -7,21 +7,19 @@
     <title>Home - İbrahim Bakır</title>
     <link rel="stylesheet" href="style.css">
     
-    <!-- 3D Model Kütüphanesi (En üste, Head içine aldım) -->
+    <!-- 3D Model Kütüphanesi -->
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <body>
     
-    <!-- Particles kütüphanesini çekiyoruz -->
+    <!-- Particles kütüphanesi -->
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
-    
-    <!-- Animasyonun oynayacağı şeffaf arka plan kutusu -->
     <div id="particles-js"></div>
 
     <!-- EKRANI İKİYE BÖLEN ANA VİTRİN -->
     <div class="split-container">
         
-        <!-- SOL MENÜ -->
+        <!-- YENİ BAŞLIKLI VE SOL MENÜ -->
         <div class="left-menu">
             
             <!-- Karşılama Başlığı -->
@@ -30,7 +28,12 @@
                 <p>GEOMATICS ENGINEER</p>
             </div>
 
-            <!-- Linkler (Hatasız Liste) -->
+            <!-- İŞTE EKSİK OLAN MOBİL KAFAMIZ! Sadece telefonda başlığın altında görünür -->
+            <div class="mobile-model">
+                <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" class="face-model"></model-viewer>
+            </div>
+
+            <!-- Linkler -->
             <a href="#about" class="menu-item">About</a>
             <a href="#interests" class="menu-item">Interests</a>
             <a href="#education" class="menu-item">Education</a>
@@ -38,25 +41,18 @@
             <a href="#skills" class="menu-item">Skills</a>
             <a href="#languages" class="menu-item">Languages</a>
             <a href="contact.html" class="menu-item">Contact</a>
-
-            <!-- SADECE TELEFONDA GÖRÜNECEK 3D MODEL -->
-            <!-- Sayma sırasını bozmaması için kodun EN ALTINA aldık -->
-            <div class="mobile-model">
-                <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" class="face-model"></model-viewer>
-            </div>
-
         </div>
 
-        <!-- SAĞ 3D MODEL (Sadece Masaüstünde Görünür) -->
+        <!-- SAĞ 3D MODEL (Masaüstü için, telefonda gizlenir) -->
         <div class="right-gif">
             <model-viewer src="model.glb" alt="3D Yüz Modelim" auto-rotate camera-controls rotation-per-second="45deg" auto-rotate-delay="1000" class="face-model"></model-viewer>
         </div>
 
-    </div> <!-- VİTRİN BURADA KESİNLİKLE KAPANMALI -->
+    </div> <!-- VİTRİN KAPANIR -->
 
 
     <!-- ======================================================== -->
-    <!-- AŞAĞI KAYILDIĞINDA GÖRÜNECEK OLAN CV BÖLÜMLERİ BAŞLIYOR  -->
+    <!-- CV BÖLÜMLERİ BAŞLIYOR  -->
     <!-- ======================================================== -->
     
     <!-- 1. ABOUT ME -->
@@ -130,21 +126,9 @@
                 "opacity": { "value": 0.4 },
                 "size": { "value": 5 }, 
                 "line_linked": {
-                    "enable": true,
-                    "distance": 170, 
-                    "color": "#000000", 
-                    "opacity": 0.3,
-                    "width": 1
+                    "enable": true, "distance": 170, "color": "#000000", "opacity": 0.3, "width": 1
                 },
-                "move": {
-                    "enable": true,
-                    "speed": 2, 
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "bounce": false
-                }
+                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
             },
             "interactivity": {
                 "detect_on": "canvas",
